@@ -1,0 +1,12 @@
+{
+    "name": "plus-custom",
+    "description": "Social Network + Ecommerce",
+  	"main": "",
+  	"authors": [
+    	"Kuda Mupeni <terrencemupeni@gmail.com>"
+    	],
+    "version": "0.0.2",
+    "ignore": [      
+        "bower.json"
+    ]
+}

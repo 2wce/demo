@@ -1,0 +1,25 @@
+{
+  "name": "PlusAfrik",
+  "description": "Social Ecommerce",
+  "main": "",
+  "authors": [
+    "Kuda Mupeni <terrencemupeni@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "plus-custom": "*",
+    "image-picker": "^0.2.4",
+    "bootstrap-tokenfield": "^0.12.1",
+    "jscroll": "^2.3.5"
+  }
+}

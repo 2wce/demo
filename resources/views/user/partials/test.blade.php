@@ -1,0 +1,1 @@
+<input id="ratt" type="number" value="{{ Auth::user()->getEndorsementRating($user) }}" class="rating" min=0 max=5 step=1 data-size="xs" disabled="true"/>
