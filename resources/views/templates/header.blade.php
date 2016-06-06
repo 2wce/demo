@@ -255,7 +255,7 @@
 <li><a href="{{ route('auth.signout') }}">Sign out</a></li>
 @else
 <li><a href="{{ route('auth.signup') }}">Sign up</a></li>
-<li><a href="{{ route('auth.signin') }}">Sign in</a></li>
+<li id="signin"><a href="{{ route('auth.signin') }}">Sign in</a></li>
 @endif
 
 @if(Auth::check())
