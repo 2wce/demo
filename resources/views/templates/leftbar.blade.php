@@ -36,7 +36,7 @@
     <img src="{{url(Auth::user()->profilePic)}}" class="img-responsive img-circle">
 </div>
 <div class="info">
-<a href="{{ route('profile.index.timeline', ['username' => Auth::user()->username]) }}"><span class="username">{{ Auth::user()->getNameOrUsername() }}</span><br>
+<a href="{{ route('profile.timeline', ['username' => Auth::user()->username]) }}"><span class="username">{{ Auth::user()->getNameOrUsername() }}</span><br>
 <span class="useremail">{{Auth::user()->location}}</span></a><br>
 <span class="useremail">{{$count = Auth::user()->endorsedBy()->count()}} {{str_plural('Endorsement', $count)}}</span>
 </div>

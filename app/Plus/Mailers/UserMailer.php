@@ -8,7 +8,7 @@ class UserMailer extends Mailer
 {
     public function sendWelcomeMessageTo(User $user)
     {
-        $view = 'emails.registration.confirm';
+        $view = 'emails.welcome';
         $subject = 'Welcome aboard';
 
         $this->sendTo($user, $subject, $view);

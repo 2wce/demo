@@ -4,6 +4,7 @@ namespace Chatty\Plus\Users;
 
 use DB;
 use Event;
+use Chatty\Events\UserRegistered;
 use Cmgmyr\Messenger\Traits\Messagable;
 use Chatty\Plus\Statuses\Status;
 use Chatty\Plus\Collections\Collection;

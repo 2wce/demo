@@ -3,6 +3,9 @@
 namespace Chatty\Jobs;
 
 use Chatty\Jobs\Job;
+use Auth;
+use File;
+use Chatty\Plus\Users\User;
 use Chatty\Plus\Users\UserRepository;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -54,9 +57,9 @@ class RegisterUser extends Job implements SelfHandling, ShouldQueue
         $user = User::register(
             $username, $email, $password,$profilePic
         );
-
+        //Auth::login($user);
         $userRepo->save($user);
-
-        return $user;
+        //dd(gettype($user));
+        return $userRepo->findByUsername($username);
     }
 }

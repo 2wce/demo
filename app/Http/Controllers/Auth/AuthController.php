@@ -7,16 +7,23 @@ use DB;
 use Input;
 use Mail;
 
+use Chatty\Plus\Users\UserRepository;
 use Chatty\Plus\Users\User;
 use Chatty\Http\Controllers\Controller;
-
+use Chatty\Jobs\RegisterUser;
+use Chatty\Jobs\LoginUser;
 use Illuminate\Http\Request;
 use Illuminate\Cookie\CookieJar;
 use Illuminate\Support\Facades\File;
 
 class AuthController extends Controller{
 
-
+	protected $userRepo;
+	public function __construct(UserRepository $userRepo)
+	{
+		parent::__construct();
+		$this->userRepo = $userRepo;
+	}
 	/*
 	 *  SIGN UP   methods
 	 *	GET request (show form)
@@ -41,32 +48,32 @@ class AuthController extends Controller{
 			'password' => 'required|min:6'
 		]);
 
-		#Dispatch Job @RETURN user
-		$user = $this->dispatchFrom(RegisterUserJob::class, $request);
 
+		#Dispatch Job @RETURN user
+		$user = $this->dispatchFrom(RegisterUser::class, $request);
+		$user = $this->userRepo->findByUsername($request->username);
+		//dd($user);
 		#Login User
 		Auth::login($user);
 
 		// redirect the user to the home page
 		#@TODO redirect to category select
 		return redirect()
-			->route('home')
-			->with('info', 'Your account has been created and you can now sign in.'
-				);
+			->route('cats');
 	}
 
 	public function postCategorySelect(Request $request)
 	{
 			$user = Auth::user();
 			$caty = Input::get('category');
-
+//dd($caty);
 			$cats = serialize($caty);
+			//dd($cats);
 			DB::table('tbl_users')
             ->where('id', $user->id)
             ->update(['categories' =>$cats]);
 
-			$job = (new LoginUser($user))->delay(10);
-			$this->dispatch($job);
+//			$this->dispatchFrom(LoginUser::class, $user);
       return redirect()->route('home');
 	}
 
@@ -95,7 +102,8 @@ class AuthController extends Controller{
 			'password' => 'required|min:6'
 		]);
 
-		$user = Auth::user();
+
+		//dd($user);
 		// check which field was filled out as users can sign in with either email or username
 		if ($request->get('username')==='') {
 			// attempt to sign in with email
@@ -110,9 +118,10 @@ class AuthController extends Controller{
 			return redirect()->back()->with('info', 'Could not sign you in with those details!');
 		}
 
-
+		$user = Auth::user();
 		return redirect()
 			->route('home')
+			->with('user', $user)
 			->with('info', 'You are now signed in');
 	}
 

@@ -41,17 +41,17 @@
 
 
                      <ul class="cover-nav">
-                         <li class="active" ><a href="{{ route('profile.index.timeline', ['username' => $user->username]) }}"><i class="fa fa-newspaper-o"></i> Timeline</a>
+                         <li class="active" ><a href="{{ route('profile.timeline', ['username' => $user->username]) }}"><i class="fa fa-newspaper-o"></i> Timeline</a>
                          </li>
-                         <li><a href="{{ route('profile.index.products', ['username' => $user->username]) }}"><i class="fa fa-tablet"></i>Products</a>
+                         <li><a href="{{ route('profile.products', ['username' => $user->username]) }}"><i class="fa fa-tablet"></i>Products</a>
                          </li>
                          <li><a href="#"><i class="fa fa-tty"></i> Service Portofilo</a>
                          </li>
-                         <li  ><a href="{{ route('profile.index.network', ['username' => $user->username]) }}"><i class="fa fa-fw fa-users"></i> Network</a>
+                         <li  ><a href="{{ route('profile.network', ['username' => $user->username]) }}"><i class="fa fa-fw fa-users"></i> Network</a>
                          </li>
                          <li><a href="user-public-users.html"><i class="fa fa-spinner"></i> Radar</a>
                          </li>
-                         <li><a href="{{ route('profile.index.collections', ['username' => $user->username]) }}"><i class="fa fa-server"></i> Collections</a>
+                         <li><a href="{{ route('profile.collections', ['username' => $user->username]) }}"><i class="fa fa-server"></i> Collections</a>
                          </li>
 
                          <li><a href="user-public-users.html"><i class="fa fa-tachometer"></i> Stats</a>

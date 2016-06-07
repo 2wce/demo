@@ -21,14 +21,14 @@ class HomeController extends Controller
     public function index()
     {
         #Show timeline if user is authenticated
-        if (Auth::check()) {
-          $value  = str_replace('["','', Auth::user()->categories);
-          $va = str_replace('"]','', $value);
+        if (Auth::check() ) {
+          //$value  = str_replace('["','', Auth::user()->categories);
+          //$va = str_replace('"]','', $value);
 
             if(!Cache::has('statuses')){
              $tests =
                 Status::where('user_id', Auth::user()->id)
-                  ->orWhereIn('cat_id', [$va])
+                  ->orWhereIn('cat_id', unserialize(Auth::user()->categories))
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 
@@ -44,6 +44,8 @@ class HomeController extends Controller
           return view('timeline.index')
             ->with('statuses', $tests);
 //            ->with('notifications', $notifications);
+        }elseif (Auth::check() && Auth::user()->hasRole('company')) {
+          return view('companies.timeline');
         }
         // for guests, simply show the home page
           return view('home');
@@ -91,13 +93,13 @@ class HomeController extends Controller
         $user = Auth::user()->id;
           // get the statuses (own and from friends)
           // (but filter out the replies - see Status model!)
-        $value  = str_replace('["','', Auth::user()->categories);
-        $va = str_replace('"]','', $value);
+        //$value  = str_replace('["','', );
+        //$va = str_replace('"]','', $value);
 
         if (!Cache::has('p-filter')) {
            $statuses =
               Status::where('type_id','=', 1)
-                ->whereIn('cat_id', [$va])
+                ->whereIn('cat_id', unserialize(Auth::user()->categories))
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
 
@@ -124,13 +126,13 @@ class HomeController extends Controller
           $user = Auth::user()->id;
             // get the statuses (own and from friends)
             // (but filter out the replies - see Status model!)
-          $value  = str_replace('["','', Auth::user()->categories);
-          $va = str_replace('"]','', $value);
+          //$value  = str_replace('["','', Auth::user()->categories);
+          //$va = str_replace('"]','', $value);
 
           if (!Cache::has('post-filter')) {
              $statuses =
                 Status::where('type_id','=', 1)
-                  ->whereIn('cat_id', [$va])
+                  ->whereIn('cat_id', unserialize(Auth::user()->categories))
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 
@@ -155,13 +157,13 @@ class HomeController extends Controller
           $user = Auth::user()->id;
             // get the statuses (own and from friends)
             // (but filter out the replies - see Status model!)
-          $value  = str_replace('["','', Auth::user()->categories);
-          $va = str_replace('"]','', $value);
+          //$value  = str_replace('["','', Auth::user()->categories);
+          //$va = str_replace('"]','', $value);
 
           if (!Cache::has('s-filter')) {
              $statuses =
                 Status::where('type_id','=', 1)
-                  ->whereIn('cat_id', [$va])
+                  ->whereIn('cat_id', unserialize(Auth::user()->categories))
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 

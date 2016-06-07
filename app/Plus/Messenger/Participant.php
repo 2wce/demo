@@ -3,6 +3,9 @@
 namespace Chatty\Plus\Messenger;
 
 use Chatty\Plus\Users\User;
+use Chatty\Plus\Messenger\Models;
+use Chatty\Plus\Messenger\Message;
+use Chatty\Plus\Messenger\Thread;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

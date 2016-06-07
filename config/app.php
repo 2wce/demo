@@ -138,7 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-		    Cmgmyr\Messenger\MessengerServiceProvider::class,
+		    //Cmgmyr\Messenger\MessengerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -147,6 +147,7 @@ return [
         Chatty\Providers\AuthServiceProvider::class,
         Chatty\Providers\EventServiceProvider::class,
         Chatty\Providers\RouteServiceProvider::class,
+        Chatty\Providers\MessengerServiceProvider::class,
 
         //Tracker
         PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,

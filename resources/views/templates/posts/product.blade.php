@@ -21,7 +21,7 @@
              </a>
              <div class="media-body">
                  <a href="#" class="pull-right text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
-                 <a href="{{ route('profile.index.timeline', ['username' =>  $status->user->username]) }}">{{ $status->user->getNameOrUsername() }}</a>
+                 <a href="{{ route('profile.timeline', ['username' =>  $status->user->username]) }}">{{ $status->user->getNameOrUsername() }}</a>
                  <span class="useremail">{{$count = Auth::user()->endorsedBy()->count()}} {{str_plural('Endorsement', $count)}}</span>
 
              </div>

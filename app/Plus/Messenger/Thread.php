@@ -3,6 +3,9 @@
 namespace Chatty\Plus\Messenger;
 
 use Carbon\Carbon;
+use Chatty\Plus\Messenger\Models;
+use Chatty\Plus\Messenger\Message;
+use Chatty\Plus\Messenger\Participant;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\SoftDeletes;

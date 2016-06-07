@@ -3,6 +3,10 @@
 namespace Chatty\Plus\Messenger;
 
 use Chatty\Plus\Users\User;
+use Chatty\Plus\Messenger\Models;
+use Chatty\Plus\Messenger\Message;
+use Chatty\Plus\Messenger\Participant;
+use Chatty\Plus\Messenger\Thread;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Message extends Eloquent
