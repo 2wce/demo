@@ -97,6 +97,20 @@ class User extends Model implements AuthenticatableContract
         return $this->hasMany('Chatty\Plus\Statuses\Status', 'user_id');
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany('Chatty\Plus\Categories\Category', 'tbl_preferred_cat',
+        'user_id',
+        'category_id');
+    }
+
+    public function getCategoryIDs()
+    {
+      // $col = $user->categories()->only('category_id')->get();
+      // return $col;
+      return $this->categories->only('category_id')->get();
+    }
+
 
     public function products()
     {

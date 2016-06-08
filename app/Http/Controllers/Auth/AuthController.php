@@ -6,7 +6,7 @@ use Auth;
 use DB;
 use Input;
 use Mail;
-
+use Chatty\Plus\Categories\Category;
 use Chatty\Plus\Users\UserRepository;
 use Chatty\Plus\Users\User;
 use Chatty\Http\Controllers\Controller;
@@ -66,12 +66,15 @@ class AuthController extends Controller{
 	{
 			$user = Auth::user();
 			$caty = Input::get('category');
-//dd($caty);
-			$cats = serialize($caty);
-			//dd($cats);
-			DB::table('tbl_users')
-            ->where('id', $user->id)
-            ->update(['categories' =>$cats]);
+
+			foreach ($caty as $id) {
+				$user->categories()->attach($id);
+			}
+			// $cats = serialize($caty);
+			// //dd($cats);
+			// DB::table('tbl_users')
+      //       ->where('id', $user->id)
+      //       ->update(['categories' =>$cats]);
 
 //			$this->dispatchFrom(LoginUser::class, $user);
       return redirect()->route('home');

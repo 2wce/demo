@@ -22,13 +22,13 @@ class HomeController extends Controller
     {
         #Show timeline if user is authenticated
         if (Auth::check() ) {
-          //$value  = str_replace('["','', Auth::user()->categories);
-          //$va = str_replace('"]','', $value);
+
+            $col = Auth::user()->categories()->get()->pluck('id');
 
             if(!Cache::has('statuses')){
              $tests =
                 Status::where('user_id', Auth::user()->id)
-                  ->orWhereIn('cat_id', unserialize(Auth::user()->categories))
+                  ->orWhereIn('cat_id', $col)
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 
@@ -95,11 +95,11 @@ class HomeController extends Controller
           // (but filter out the replies - see Status model!)
         //$value  = str_replace('["','', );
         //$va = str_replace('"]','', $value);
-
+        $col = Auth::user()->categories()->get()->pluck('id');
         if (!Cache::has('p-filter')) {
            $statuses =
               Status::where('type_id','=', 1)
-                ->whereIn('cat_id', unserialize(Auth::user()->categories))
+                ->whereIn('cat_id', $col)
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
 
@@ -124,6 +124,7 @@ class HomeController extends Controller
           // get the statuses (own and from friends)
           // (but filter out the replies - see Status model!)
           $user = Auth::user()->id;
+          $col = Auth::user()->categories()->get()->pluck('id');
             // get the statuses (own and from friends)
             // (but filter out the replies - see Status model!)
           //$value  = str_replace('["','', Auth::user()->categories);
@@ -132,7 +133,7 @@ class HomeController extends Controller
           if (!Cache::has('post-filter')) {
              $statuses =
                 Status::where('type_id','=', 1)
-                  ->whereIn('cat_id', unserialize(Auth::user()->categories))
+                  ->whereIn('cat_id', $col
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 
@@ -155,6 +156,7 @@ class HomeController extends Controller
         // show timeline if user is authenticated
         if (Auth::check()) {
           $user = Auth::user()->id;
+          $col = Auth::user()->categories()->get()->pluck('id');
             // get the statuses (own and from friends)
             // (but filter out the replies - see Status model!)
           //$value  = str_replace('["','', Auth::user()->categories);
@@ -163,7 +165,7 @@ class HomeController extends Controller
           if (!Cache::has('s-filter')) {
              $statuses =
                 Status::where('type_id','=', 1)
-                  ->whereIn('cat_id', unserialize(Auth::user()->categories))
+                  ->whereIn('cat_id', $col)
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 

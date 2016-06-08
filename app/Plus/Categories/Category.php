@@ -29,7 +29,12 @@ class Category extends Model
        return $this->hasMany('Chatty\Plus\Products\Product', 'product_id');
     }
 
-
+    public function users()
+    {
+        return $this->belongsToMany('Chatty\Plus\Users\User', 'tbl_preferred_cat',
+        'category_id',
+      'user_id');
+    }
 
 
 }
