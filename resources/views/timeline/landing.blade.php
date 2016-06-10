@@ -1,11 +1,10 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 
 <section id="intro">
     <div class="overlay"></div>
@@ -61,28 +60,28 @@ Author: Dilipkumar
 [TABLE OF CONTENTS]
 
   1. GLOBAL STYLES
-    1.1. Theme Extras 
+    1.1. Theme Extras
   2. HEADER
   3. INTRO STYLES
-    3.1. Intro / 1 
-    3.2. Intro / 2 
-    3.3. Intro / 3 
-    3.4. Intro / 4 
-    3.5. Intro / 5 
-    3.6. Intro / 6 
-    3.7. Intro / 7 
-    3.8. Intro / Extras 
-  4. TERMS / POPUP 
-  5. SERVICES 
-  6. FEATURES 
-  7. INFO BOXES 
-  8. INFO BOXES / DUAL 
-  9. SCREENSHOTS  
+    3.1. Intro / 1
+    3.2. Intro / 2
+    3.3. Intro / 3
+    3.4. Intro / 4
+    3.5. Intro / 5
+    3.6. Intro / 6
+    3.7. Intro / 7
+    3.8. Intro / Extras
+  4. TERMS / POPUP
+  5. SERVICES
+  6. FEATURES
+  7. INFO BOXES
+  8. INFO BOXES / DUAL
+  9. SCREENSHOTS
   10. ABOUT / INFO CONTENT
   11. TESTIMONIALS
   12. PRICING TABLE
   13. SERVICES / 2
-  14. FAQ SECTION 
+  14. FAQ SECTION
   15. CLIENTS
   16. WRAP CONTENT
   17. GOOGLE MAP
@@ -90,7 +89,7 @@ Author: Dilipkumar
   19. FOOTER / COPYRIGHT
   20. MODAL / VIDEO
   21. RESPONSIVE STYLES
-  
+
 -------------------------------------------------------------------*/
 
 /* 1. GLOBAL STYLES */
@@ -1242,7 +1241,7 @@ header {
   -webkit-transform: scale(1.05,1.05);
   -ms-transform: scale(1.05,1.05);
   transform: scale(1.05,1.05);
-  cursor: url('../images/plus.png'), url('../images/plus.png'), move;  
+  cursor: url('../images/plus.png'), url('../images/plus.png'), move;
 }
 
 .shots-thumb img {
@@ -1545,7 +1544,7 @@ header {
 }
 
 .video iframe,
-.video object,  
+.video object,
 .video embed {
   position: absolute;
   top: 0;
@@ -1711,7 +1710,7 @@ header {
   color: #fff;
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 .wrap a:hover span,
 .wrap a:focus span {
   -webkit-transform: rotateX(0deg) translateY(-0px);
@@ -2008,7 +2007,7 @@ header {
 }
 
 
-/*------------------------------------------------------------- 
+/*-------------------------------------------------------------
                THEME SWITCHER
 --------------------------------------------------------------- */
 #customizer {

@@ -11,6 +11,12 @@
 |
 */
 
+
+Route::post('/test', function(\Illuminate\Http\Request $request){
+	return response()->json(['message' => $request['body'] ]);
+
+})->name('test');
+
 #Filter Routes
 	Route::get('/posts', [
 		'uses' => '\Chatty\Http\Controllers\UI\HomeController@posts',

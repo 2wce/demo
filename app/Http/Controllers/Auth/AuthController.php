@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\File;
 class AuthController extends Controller{
 
 	protected $userRepo;
+
 	public function __construct(UserRepository $userRepo)
 	{
 		parent::__construct();

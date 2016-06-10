@@ -133,7 +133,7 @@ class HomeController extends Controller
           if (!Cache::has('post-filter')) {
              $statuses =
                 Status::where('type_id','=', 1)
-                  ->whereIn('cat_id', $col
+                  ->whereIn('cat_id', $col)
                   ->orderBy('created_at', 'desc')
                   ->paginate(10);
 

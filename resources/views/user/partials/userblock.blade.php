@@ -1,7 +1,7 @@
 <div class="media">
 
 	<a class="pull-left" href="{{ route('profile.index', ['username' => $user->username]) }}">
-	 <img  class = "img-responsive" width = "200"  src="{{url($user->profilePic)}}"> 
+	 <img  class = "img-responsive" width = "200"  src="{{url($user->profilePic)}}">
 	</a>
 
 	<div class="media-body">
@@ -20,7 +20,7 @@
 
 </div>
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('/assets/css/bootsrap.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ URL::asset('bower_components/bootstrap-star-rating/css/star-rating.css') }}" media="all" rel="stylesheet" type="text/css"/>
     <script src="{{ URL::asset('bower_components/bootstrap-star-rating/js/jquery-1.11.3.min.js') }}"></script>

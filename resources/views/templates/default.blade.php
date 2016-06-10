@@ -28,6 +28,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 		<script type="text/javascript" src="{{ asset('/assets/js/jquery.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/assets/js/bootstrap.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('/assets/js/bootstrap-select.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/assets/js/review.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/assets/js/application.js') }}"></script>
   	<script type="text/javascript" src="{{ asset('/assets/js/vendor.js') }}"></script>
