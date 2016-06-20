@@ -10,7 +10,7 @@ bootstrap/cache/
 #storage/
 .env.*.php
 .env.php
-#.env
+.env
 .env.example
 
 
